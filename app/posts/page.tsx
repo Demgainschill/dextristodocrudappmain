@@ -1,5 +1,6 @@
 import { db } from "@/db";
 import { posts } from "@/db/schema";
+import { createPost } from "app/actions/actions";
 import Link from "next/link";
 
 export default async function PostsPage() {
@@ -7,12 +8,40 @@ export default async function PostsPage() {
 
   return (
     <div>
-        <h1 className="text-center font-bold text-2xl">All Posts</h1>
+      <h1 className="text-center font-bold text-2xl">All Posts</h1>
+
       {allPosts.map(post => (
         <div key={post.id} className="text-center">
-            <Link href={`/posts/${post.id}`}>{post.title}</Link>
+          <Link href={`/posts/${post.id}`}>
+            {post.title}
+          </Link>
         </div>
       ))}
+
+      <form
+        action={createPost}
+        className="max-w-[400px] mx-auto mt-24"
+      >
+        <input
+          name="title"
+          type="text"
+          placeholder="Title"
+          className="border p-2 mb-2 w-full"
+        />
+
+        <textarea
+          name="body"
+          placeholder="Content"
+          className="border p-2 mb-2 w-full"
+        />
+
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-3 py-1 rounded-md"
+        >
+          Create Post
+        </button>
+      </form>
     </div>
   );
 }
