@@ -45,7 +45,7 @@ export default async function PostsPage() {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white px-3 py-1 rounded-md"
+          className="bg-blue-500 text-white px-4 rounded-md hover:bg-red-400 transition"
         >
           Create Post
         </button>
