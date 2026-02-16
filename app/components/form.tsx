@@ -52,6 +52,7 @@ export default function TestForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 max-w-md mx-auto mt-10 bg-red-400 px-6 py-6"
       >
+        <h1 className="font-bold text-xl flex items-center justify-center">Help Form</h1>
 
         {/* Name */}
         <FormField
@@ -104,11 +105,12 @@ export default function TestForm() {
         {/* ✅ Success message */}
         {content && (
           <div className="font-black font-semibold text-center">
-            {content}
+            { content}
           </div>
         )}
 
       </form>
     </Form>
-  )
-}
+  
+      )
+    }
