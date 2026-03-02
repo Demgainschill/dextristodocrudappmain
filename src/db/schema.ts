@@ -5,3 +5,11 @@ export const posts = sqliteTable("posts", {
   title: text("title").notNull(),
   body: text("body").notNull(),
 });
+
+
+export const contacts = sqliteTable("contacts", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+});
