@@ -1,0 +1,26 @@
+mkdir -p ~/dextristodocrudappmain/app/actions && cat > ~/dextristodocrudappmain/app/actions/search.ts << 'EOF'
+"use server";
+import { db } from "@/db";
+import { contactSubmissions } from "@/db/schema";
+import { like, or } from "drizzle-orm";
+
+export async function searchSubmissions(query: string) {
+  if (!query || query.trim() === "") return [];
+  const q = `%${query}%`;
+  const results = await db
+    .select()
+    .from(contactSubmissions)
+    .where(
+      or(
+        like(contactSubmissions.name, q),
+        like(contactSubmissions.email, q),
+        like(contactSubmissions.subject, q),
+        like(contactSubmissions.company, q),
+        like(contactSubmissions.jobTitle, q),
+        like(contactSubmissions.message, q),
+      )
+    )
+    .limit(6);
+  return results;
+}
+EOF

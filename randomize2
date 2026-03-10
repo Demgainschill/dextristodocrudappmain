@@ -1,7 +1,7 @@
+cat > ~/dextristodocrudappmain/app/components/search.tsx << 'EOF'
 "use client";
 import { useState, useTransition, useRef, useEffect } from "react";
-import { searchSubmissions } from "../actions/search";
-
+import { searchSubmissions } from "@/app/actions/search";
 
 type Submission = {
   id: number;
@@ -62,7 +62,7 @@ export default function Search() {
           placeholder="Search..."
           value={query}
           onChange={handleChange}
-          className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-orange-400 bg-white"
+          className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-green-400 bg-white"
           autoComplete="off"
         />
       </form>
@@ -99,3 +99,4 @@ export default function Search() {
     </div>
   );
 }
+EOF

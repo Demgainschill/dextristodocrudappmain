@@ -7,7 +7,7 @@ export default function State(){
     }
     return(
         <>
-            <button className="bg-red-400" onClick={clickFunc}>Hello from Nextjs{count} </button>    
+            <button className="bg-red-500" onClick={clickFunc}>Hello from Nextjs{count} </button>    
         </>
     )
 }   

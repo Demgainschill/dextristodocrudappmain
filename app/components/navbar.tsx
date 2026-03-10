@@ -34,17 +34,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="text-center bg-green-300 h-20 flex items-center justify-center gap-20 px-6 relative">
+    <div className="text-center bg-blue-500 h-20 flex items-center justify-center gap-20 px-6 relative">
       <Link href="/" className="font-semibold hover:underline">Home</Link>
       <Search />
       <Link href="/posts" className="font-semibold hover:underline">Posts</Link>
       <Link href="/help" className="font-semibold hover:underline">Help</Link>
 
       {/* Avatar + Dropdown — all in one relative container */}
-      <div ref={containerRef} className="absolute right-6 px-8">
+      <div ref={containerRef} className="absolute right-6 px-6 py-6">
         <button
           onClick={() => setOpen((v) => !v)}
-          className="w-10 h-10 rounded-full bg-green-700 text-white font-bold text-sm flex items-center justify-center shadow-md hover:bg-green-800 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white "
+          className="w-10 h-10 rounded-full bg-red-700 text-white font-bold text-sm flex items-center justify-center shadow-md hover:bg-green-800 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
           aria-label="Open profile"
         >
           {PROFILE.avatar}
